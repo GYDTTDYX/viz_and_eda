@@ -178,5 +178,15 @@ weather_df |>
 
 ## Themes
 ```{r}
-
+weather_df |>
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .5) + 
+  labs(
+    title = "Temperature plot", 
+    x = "Min daily temp (degree C)", 
+    y = "Max daily temp (degree C)", 
+    color = "Location", 
+    caption = "Max vs Min daily temp; data from moaa"
+  ) + 
+  viridis::scale_color_viridis(discrete = TRUE)
 ```
